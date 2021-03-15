@@ -1,0 +1,6 @@
+{
+  "IIS-Site-Name": "direct-link",
+  "App-Pool-Name": "direct-link",
+  "IIS-App-Pool-Dot-Net-Version": "v4.0",
+  "bindings": [ "direct-link.localtest.me" ]
+}
