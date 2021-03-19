@@ -1,15 +1,53 @@
 ﻿@inherits UmbracoViewPage
 
+@{
+    var title = Model.HasValue("title") ? Model.Value("title") : Model.Name;
+    var subtitle = Model.HasValue("subtitle") ? Model.Value<string>("subtitle") : "";
+    var image = Model.Value<IPublishedContent>("mainImage");
+
+    string imageUrl = "";
+    if (image != null)
+    {
+        imageUrl = image.GetCropUrl(1903, 532);
+    }
+
+    var developerName = Model.HasProperty("developerName") && Model.HasValue("developerName") ? Model.Value<string>("developerName") : "";
+    DateTime gameDate = Model.HasProperty("gameDate") && Model.HasValue("gameDate") ? Model.Value<DateTime>("gameDate") : DateTime.MinValue;
+
+    bool hasgameDetails = !string.IsNullOrWhiteSpace(developerName) || gameDate != DateTime.MinValue;
+}
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('/img/post-bg.jpg')">
+<header class="masthead" style="@(!string.IsNullOrWhiteSpace(imageUrl)? "background-image: url('" + imageUrl + "')" : null)">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>@Model.Name</h1>
+                    <h1>@title</h1>
+                    @if (!string.IsNullOrWhiteSpace(subtitle))
+                    {
+                        if (hasgameDetails)
+                        {
+                            <h2 class="subheading">@subtitle</h2>
+                        }
+                        else
+                        {
+                            <span class="subheading">@subtitle</span>
+                        }
+                    }
 
-                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                    @if (hasgameDetails)
+                    {
+                        <span class="meta">
+                            Created
+                            @if(!string.IsNullOrWhiteSpace(developerName))
+                            {
+                                @Html.Raw("by ") @developerName
+                            }
+                            on @gameDate.ToString("MMMM dd, yyyy")
+                        </span>
+                    }
+
                 </div>
             </div>
         </div>
