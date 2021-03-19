@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ac6cef247a73ff02")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8e5189b61ea7eee8")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -312,7 +312,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Contact</summary>
 	[PublishedModel("contact")]
-	public partial class Contact : PublishedContentModel, IContactFormControls
+	public partial class Contact : PublishedContentModel, IContactFormControls, IMainImageControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -348,6 +348,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
 		[ImplementPropertyType("successMessage")]
 		public global::System.Web.IHtmlString SuccessMessage => global::Umbraco.Web.PublishedModels.ContactFormControls.GetSuccessMessage(this);
+
+		///<summary>
+		/// Main Image: Choose the main Image for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
+		[ImplementPropertyType("mainImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent MainImage => global::Umbraco.Web.PublishedModels.MainImageControls.GetMainImage(this);
 	}
 
 	/// <summary>Content</summary>
@@ -530,7 +537,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Search</summary>
 	[PublishedModel("search")]
-	public partial class Search : PublishedContentModel
+	public partial class Search : PublishedContentModel, IMainImageControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -552,6 +559,13 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Main Image: Choose the main Image for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
+		[ImplementPropertyType("mainImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent MainImage => global::Umbraco.Web.PublishedModels.MainImageControls.GetMainImage(this);
 	}
 
 	/// <summary>XML Sitemap</summary>
