@@ -354,6 +354,7 @@
     <Content Include="Views\Error.cshtml" />
     <Content Include="Views\Partials\Grid\Clean.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
+    <Content Include="Views\XMLSitemap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
