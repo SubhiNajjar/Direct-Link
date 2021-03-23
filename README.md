@@ -1,6 +1,6 @@
 # Direct-Link ( in progress )
 
-## Why umbraco
+## Why umbraco ?
 I am planning to launch a new website, and everyone seems to be talking about WordPress, a blogging platform, which makes you think this must be the best choice.
 If you are looking for this level of customizability, then the perfect solution is Umbraco.
 * It Gives You More Control
@@ -14,7 +14,7 @@ This project helps to find gaming system requirements.
 **For example**
 * https://gamesystemrequirements.com/
 
-###### However, it is not a big project but I got to know something new in programming.
+##### However, it is not a big project but I got to know something new in programming.
 
 ## ASP.NET framework with Umbraco
 * Microsoft ASP.NET 4.7.2
