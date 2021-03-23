@@ -1,7 +1,7 @@
 # Direct-Link
 ( in progress )
 
-## Why umbraco ?
+## Why Umbraco ?
 I am making a new website with Umbraco, and everyone seems to be talking about WordPress, a blogging platform, which makes me think this is the best option.
 If you are looking for this level of customizability, then the perfect solution is Umbraco.
 * It Gives You More Control.
