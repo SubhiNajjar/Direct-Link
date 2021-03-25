@@ -355,6 +355,7 @@
     <Content Include="Views\Partials\Grid\Clean.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\XMLSitemap.cshtml" />
+    <Content Include="Views\Partials\CardsLatestGames.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -368,6 +369,7 @@
       <Name>DirectLink.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

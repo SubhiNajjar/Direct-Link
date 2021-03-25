@@ -73,6 +73,13 @@ namespace Umbraco.Web.PublishedModels
 		public string Title => global::Umbraco.Web.PublishedModels.HeaderControls.GetTitle(this);
 
 		///<summary>
+		/// Card Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
+		[ImplementPropertyType("cardImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent CardImage => global::Umbraco.Web.PublishedModels.MainImageControls.GetCardImage(this);
+
+		///<summary>
 		/// Main Image: Choose the main Image for this page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
