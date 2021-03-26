@@ -23,10 +23,6 @@ namespace Umbraco.Web.PublishedModels
 	/// <summary>Main Image Controls</summary>
 	public partial interface IMainImageControls : IPublishedContent
 	{
-		/// <summary>Card Image</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
-		global::Umbraco.Core.Models.PublishedContent.IPublishedContent CardImage { get; }
-
 		/// <summary>Main Image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
 		global::Umbraco.Core.Models.PublishedContent.IPublishedContent MainImage { get; }
@@ -56,17 +52,6 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Card Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
-		[ImplementPropertyType("cardImage")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent CardImage => GetCardImage(this);
-
-		/// <summary>Static getter for Card Image</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.11.1")]
-		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetCardImage(IMainImageControls that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("cardImage");
 
 		///<summary>
 		/// Main Image: Choose the main Image for this page

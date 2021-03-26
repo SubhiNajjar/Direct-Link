@@ -28,7 +28,7 @@
                 {
                     var results = Umbraco.ContentQuery.Search(searchQuery, string.Empty);
                     long resultCount = results != null && results.Any() ? results.Count() : 0;
-                    <p>Your search for <strong>@searchQuery</strong> returned @resultCount result@(resultCount == 1 ? null : "s") </p>
+                <p>Your search for <strong>@searchQuery</strong> returned @resultCount result@(resultCount == 1 ? null : "s") </p>
 
                     if (resultCount > 0)
                     {
