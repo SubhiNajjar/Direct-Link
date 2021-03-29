@@ -21,31 +21,31 @@
 {
 
     <section>
-        <div class="container padding">
+        <div class="container">
             <div class="row">
                 @foreach (var game in pageOfGames)
                 {
                     var cardImagess = game.Value<IPublishedContent>("mainImage");
-
-                    <div class="col-md-4">
-                        <div class="card-deck">
+                    <div class="col-md-4 mb-3">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col">
                             <div class="card">
                                 @if (cardImagess != null)
                                 {
-                                    <img class="card-img-top" src="@(cardImagess.GetCropUrl(320,180))" alt="Card image cap">
+                                    <img class="card-img-top img-responsive full-width" src="@(cardImagess.GetCropUrl(320,180))" alt="Card image cap">
                                 }
                                 <div class="card-body">
                                     <a href="@game.Url">
                                         <h5 class="card-title">
                                             @(!string.IsNullOrWhiteSpace(game.Title) ? game.Title : game.Name)
                                         </h5>
-                                        @if (!string.IsNullOrWhiteSpace(game.Subtitle))
-                                        {
-                                            <p class="card-text">
-                                                @game.Subtitle
-                                            </p>
-                                        }
                                     </a>
+
+                                    @if (!string.IsNullOrWhiteSpace(game.Subtitle))
+                                    {
+                                        <p>
+                                            @game.Subtitle
+                                        </p>
+                                    }
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-muted">
@@ -58,7 +58,10 @@
                                     </small>
                                 </div>
                             </div>
+
                         </div>
+
+
                     </div>
                     <hr>
                 }
