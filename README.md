@@ -1,11 +1,11 @@
-# Direct-Link
+## Direct-Link
 ( in progress )
 
-## Why Umbraco ?
+#### Why Umbraco ?
 I am making a new website with Umbraco, and everyone seems to be talking about WordPress, a blogging platform, which makes me think this is the best option.
 
 
-## What does this project help?
+#### What does this project help?
 This project helps to find gaming system requirements.
 
 **For example**
