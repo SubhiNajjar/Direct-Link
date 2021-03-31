@@ -1,29 +1,20 @@
-﻿@using DirectLink.Core.Helpers
-@inherits UmbracoViewPage
+﻿@inherits DirectLinkViewPage
+
+@using DirectLink.Core.ViewPages
+@using System.Linq
 
 @{
-    var gameList = Model.Root().Descendants<GameList>().FirstOrDefault();
-    var games = gameList.Descendants<Game>().Where(x => x.IsVisible()).OrderByDescending(y => y.CreateDate);
-
-    var isGameListPage = gameList.Id == Model.Id;
-    var fallbackPageSize = isGameListPage ? 9 : 3;
-
-    var pageNumber = QueryStringHelper.GetIntFromQueryString(Request, "page", 1);
-    var pageSize = QueryStringHelper.GetIntFromQueryString(Request, "size", fallbackPageSize);
-
-    var pageOfGames = games.Skip((pageNumber - 1) * pageSize).Take(pageSize);
-    var totalItemCount = games.Count();
-    var pageCount = totalItemCount > 0 ? Math.Ceiling((double)totalItemCount / pageSize) : 1;
+    var resultSet = GameService.GetLatestGames(Model, Request);
 }
 
 
-@if (games != null && games.Any())
+@if (resultSet != null && resultSet.Results != null && resultSet.Results.Any())
 {
-
+    var games = resultSet.Results.Cast<Game>();
     <section>
         <div class="container">
             <div class="row">
-                @foreach (var game in pageOfGames)
+                @foreach (var game in games)
                 {
                     var cardImagess = game.Value<IPublishedContent>("mainImage");
                     <div class="col-md-4 mb-3">
@@ -71,14 +62,14 @@
 
             <!-- Pager -->
             <div id="paging" class="clearfix">
-                @if (isGameListPage)
+                @if (resultSet.IsGameListPage)
                 {
-                    if (pageCount > 1)
+                    if (resultSet.PageCount > 1)
                     {
                         <div class="paging-block">
-                            @if (pageNumber > 1)
+                            @if (resultSet.PageNumber > 1)
                             {
-                                <a class="btn btn-primary float-left" href="@($"{gameList.Url}?page={pageNumber - 1}&size={pageSize}")">Prev</a>
+                                <a class="btn btn-primary float-left" href="@($"{resultSet.Url}?page={resultSet.PageNumber - 1}&size={resultSet.PageSize}")">Prev</a>
                             }
                             else
                             {
@@ -86,12 +77,12 @@
                             }
                         </div>
                         <div class="paging-block text-center">
-                            <span>Page @pageNumber of @pageCount</span>
+                            <span>Page @resultSet.PageNumber of @resultSet.PageCount</span>
                         </div>
                         <div class="paging-block">
-                            @if (pageNumber < pageCount)
+                            @if (resultSet.PageNumber < resultSet.PageCount)
                             {
-                                <a class="btn btn-primary float-right" href="@($"{gameList.Url}?page={pageNumber + 1}&size={pageSize}")">Next</a>
+                                <a class="btn btn-primary float-right" href="@($"{resultSet.Url}?page={resultSet.PageNumber + 1}&size={resultSet.PageSize}")">Next</a>
                             }
                             else
                             {
@@ -103,7 +94,7 @@
                 }
                 else
                 {
-                    <a class="btn btn-primary float-right" href="@(gameList.Url)">View All</a>
+                    <a class="btn btn-primary float-right" href="@(resultSet.Url)">View All</a>
                 }
             </div>
         </div>
