@@ -6,15 +6,16 @@ using Umbraco.Web;
 using System;
 using System.Net.Mail;
 using Umbraco.Core.Logging;
+using DirectLink.Core.Services;
 
 namespace DirectLink.Core.Controllers
 {
     public class ContactSurfaceController : SurfaceController
     {
-        private readonly ILogger _logger;
-        public ContactSurfaceController(ILogger logger)
+        private readonly ISmtpService _smtpService;
+        public ContactSurfaceController(ISmtpService smtpService)
         {
-            _logger = logger;
+            _smtpService = smtpService;
         }
 
         [HttpGet]
@@ -36,7 +37,7 @@ namespace DirectLink.Core.Controllers
 
             if (ModelState.IsValid)
             {
-                success = SendEmail(model);
+                success = _smtpService.SendEmail(model);
             }
 
             var contactPage = UmbracoContext.Content.GetById(false, model.ContactFormId);
@@ -45,31 +46,6 @@ namespace DirectLink.Core.Controllers
             var errorMessage = contactPage.Value<IHtmlString>("errorMessage");
 
             return PartialView("~/Views/Partials/Contact/Result.cshtml", success ? successMessage : errorMessage);
-        }
-
-        public bool SendEmail(ContactViewModel model)
-        {
-            try
-            {
-                MailMessage message = new MailMessage();
-                SmtpClient client = new SmtpClient();
-
-
-                string toAddress = "to@directlink.com";
-                string fromAddress = "from@directlink.com";
-                message.Subject = $"Enquiry from: {model.Name} - {model.Email}";
-                message.Body = model.Message;
-                message.To.Add(new MailAddress(toAddress, toAddress));
-                message.From = new MailAddress(fromAddress, fromAddress);
-
-                client.Send(message);
-                return true;
-            }
-            catch(Exception ex)
-            {
-                _logger.Error(typeof(ContactSurfaceController), ex, "Error sending contact form.");
-                return false;
-            }
         }
     }
 }
