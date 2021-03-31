@@ -6,7 +6,7 @@ I am making a new website with Umbraco, and everyone seems to be talking about W
 
 
 #### What does this project help?
-This project helps to find gaming system requirements.
+This project helps to find gaming system requirements, ( A blogging platform) .
 
 **For example**
 * https://gamesystemrequirements.com/
