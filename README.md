@@ -2,7 +2,7 @@
 
 This is an Asp.net framework 4.7.2 with Umbraco.
 I created a new site with Umbraco, and everyone seems to be talking about WordPress, a blogging platform, which makes me think this is the best option.
-This project helps to find gaming system requirements, ( A blogging platform).[Example](https://gamesystemrequirements.com/).
+This project helps to find gaming system requirements, ( A blogging platform). [Example](https://gamesystemrequirements.com/).
 
 #### Home Page
 ![Home-Page](Screenshots/HomePage.png)
@@ -10,8 +10,7 @@ This project helps to find gaming system requirements, ( A blogging platform).[E
 #### Umbraco Home Page
 ![Umbraco-Home-Page](Screenshots/Umbraco-Homae-Page.png)
 
-#### Screenshots
-[Screenshots](https://github.com/SubhiNajjar/Direct-Link/tree/master/Screenshots)
+#### [Screenshots](https://github.com/SubhiNajjar/Direct-Link/tree/master/Screenshots)
 
 
 ## Backend
