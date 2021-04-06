@@ -22,3 +22,16 @@ This project helps to find gaming system requirements, ( A blogging platform) .
 
 ## Umbraco
 * UmbracoCms 8.11.1
+
+## Set-up Commands
+
+``` bash
+update-package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+```
+## Set-up IIS
+
+``` bash
+# Powershell administrador
+IIS-Builder.ps1
+```
+
