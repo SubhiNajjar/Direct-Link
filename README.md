@@ -1,35 +1,50 @@
-## Direct-Link
+# Direct-Link
 
-#### Why Umbraco ?
-I am making a new website with Umbraco, and everyone seems to be talking about WordPress, a blogging platform, which makes me think this is the best option.
+This is an Asp.net framework 4.7.2 with Umbraco.
+I created a new site with Umbraco, and everyone seems to be talking about WordPress, a blogging platform, which makes me think this is the best option.
+This project helps to find gaming system requirements, ( A blogging platform).[Example](https://gamesystemrequirements.com/).
+
+#### Home Page
+![Home-Page](Screenshots/HomePage.png)
+
+#### Umbraco Home Page
+![Umbraco-Home-Page](Screenshots/Umbraco-Homae-Page.png)
+
+#### Screenshots
+[Screenshots](https://github.com/SubhiNajjar/Direct-Link/tree/master/Screenshots)
 
 
-#### What does this project help?
-This project helps to find gaming system requirements, ( A blogging platform) .
+## Backend
+* Microsoft ASP.NET 4.7.2 MVC
+* **Database** : Microsoft SQL Express 2017, [Download](https://www.microsoft.com/en-us/download/details.aspx?id=55994).
+* SMTP
 
-**For example**
-* https://gamesystemrequirements.com/
-
-##### However, it is not a big project but I got to know something new in programming.
-
-## ASP.NET framework with Umbraco
-* Microsoft ASP.NET 4.7.2
-* Microsoft SQL Express 2017
+## Frontend 
+* UmbracoCms **Version**: 8.11.1.
+* JS
+* Clean blog template [Download](https://startbootstrap.com/theme/clean-blog).
+* jQuery
+* Ajax
 
 ## Microsoft IIS
-* IIS builder
-* https://github.com/mattou07/iis-builder
+* IIS builder [GitHub](https://github.com/mattou07/iis-builder).
 
-## Umbraco
-* UmbracoCms 8.11.1
 
 ## Set-up Commands
 
 ``` bash
 update-package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
 ```
-## Set-up IIS
 
+## Umbraco admin
+``` bash
+http://localhost:****/umbraco
+
+After Powershell
+direct-link.localtest.me/umbraco
+```
+
+## Set-up IIS
 ``` bash
 # Powershell administrador
 IIS-Builder.ps1
