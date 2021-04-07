@@ -14,7 +14,7 @@ This project helps to find gaming system requirements, ( A blogging platform). [
 
 
 ## Backend
-* Microsoft ASP.NET 4.7.2 MVC
+* ASP.NET 4.7.2 MVC
 * **Database** : Microsoft SQL Express 2017, [Download](https://www.microsoft.com/en-us/download/details.aspx?id=55994).
 * SMTP
 
